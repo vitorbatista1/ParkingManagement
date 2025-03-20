@@ -1,17 +1,20 @@
 package com.parking.management.entities;
 
-import jakarta.persistence.*; // Corrigido para importar as anotações corretas do JPA
+import jakarta.persistence.*; 
 
 @Entity
-@Table(name = "veiculo") // Define a tabela no banco de dados
+@Table(name = "veiculo")
 public class Carro { 
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(nullable = false) // Define que não pode ser nulo
+    @Column(nullable = false) 
     private String marca;
+
+    @Column(name = "placa")
+    private String placa;
 
     @Column(nullable = false)
     private String modelo;
@@ -19,15 +22,16 @@ public class Carro {
     private int ano;
     private String cor;
 
-    // Construtor padrão necessário para JPA
+
     public Carro() {}
 
-    // Construtor com parâmetros
-    public Carro(String marca, String modelo, int ano, String cor) {
+  
+    public Carro(String marca, String modelo, int ano, String cor, String placa) {
         this.marca = marca;
         this.modelo = modelo;
         this.ano = ano;
         this.cor = cor;
+        this.placa = placa;
     }
 
     // Getters e Setters

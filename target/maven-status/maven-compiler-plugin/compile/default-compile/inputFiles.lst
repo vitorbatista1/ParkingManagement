@@ -1,0 +1,7 @@
+/Users/vitorbatista1/Documents/ProjetosJava/ParkingManagement/src/main/java/com/parking/management/models/VeiculosModels.java
+/Users/vitorbatista1/Documents/ProjetosJava/ParkingManagement/src/main/java/com/parking/management/repositories/CarroRepository.java
+/Users/vitorbatista1/Documents/ProjetosJava/ParkingManagement/src/main/java/com/parking/management/dtos/CarroDTO.java
+/Users/vitorbatista1/Documents/ProjetosJava/ParkingManagement/src/main/java/com/parking/management/entities/Carro.java
+/Users/vitorbatista1/Documents/ProjetosJava/ParkingManagement/src/main/java/com/parking/management/controllers/CarroController.java
+/Users/vitorbatista1/Documents/ProjetosJava/ParkingManagement/src/main/java/com/parking/management/ParkingManagementApplication.java
+/Users/vitorbatista1/Documents/ProjetosJava/ParkingManagement/src/main/java/com/parking/management/services/CarroService.java

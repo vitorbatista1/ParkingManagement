@@ -13,6 +13,10 @@ public class CarroService {
     @Autowired
     private final CarroRepository carroRepository;
 
+    public CarroService(CarroRepository carroRepository) {
+        this.carroRepository = carroRepository;
+    }
+
     public List<Carro> listarTodos() {
         return carroRepository.findAll();
     }
