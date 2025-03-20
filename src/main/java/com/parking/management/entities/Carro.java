@@ -3,7 +3,7 @@ package com.parking.management.entities;
 import jakarta.persistence.*; // Corrigido para importar as anotações corretas do JPA
 
 @Entity
-@Table(name = "carro") // Define a tabela no banco de dados
+@Table(name = "veiculo") // Define a tabela no banco de dados
 public class Carro { 
     
     @Id

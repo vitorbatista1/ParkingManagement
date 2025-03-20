@@ -6,5 +6,6 @@ public class CarroDTO {
     private String cor;
     private String marca;
     private int ano;
+    private String tipo;
     
 }
