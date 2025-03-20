@@ -1,12 +1,13 @@
 package com.parking.management;
 
-
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-// endpoint para buscar
-public class ParkingApiApplication {
+public class ParkingManagementApplication {
+
 	public static void main(String[] args) {
-		System.out.println("Hello World");
+		SpringApplication.run(ParkingManagementApplication.class, args);
 	}
+
 }
