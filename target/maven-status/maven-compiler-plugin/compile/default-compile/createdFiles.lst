@@ -1,8 +1,0 @@
-com/parking/management/response/CustomResponse.class
-com/parking/management/ParkingManagementApplication.class
-com/parking/management/repositories/CarroRepository.class
-com/parking/management/models/VeiculosModels.class
-com/parking/management/dtos/CarroDTO.class
-com/parking/management/services/CarroService.class
-com/parking/management/entities/Carro.class
-com/parking/management/controllers/CarroController.class
