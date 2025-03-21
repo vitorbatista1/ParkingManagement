@@ -6,13 +6,15 @@ public class VeiculosModels {
     private String modelo;
     private int ano;
     private String cor;
+    private String placa;
 
-    public VeiculosModels(int id, String marca, String modelo, int ano, String cor) {
+    public VeiculosModels(int id, String marca, String modelo, int ano, String cor, String placa) {
         this.id = id;
         this.marca = marca;
         this.modelo = modelo;
         this.ano = ano;
         this.cor = cor;
+        this.placa = placa;
     }
 
     public int getId(){
@@ -53,6 +55,14 @@ public class VeiculosModels {
 
     public void setCor(String cor){
         this.cor = cor;
+    }
+
+    public String getPlaca() {
+        return placa;
+    }
+
+    public void setPlaca(String placa){
+        this.placa = placa;
     }
   
 }
