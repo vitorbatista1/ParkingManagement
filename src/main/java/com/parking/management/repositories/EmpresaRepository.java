@@ -1,13 +1,11 @@
 package com.parking.management.repositories;
 
-import java.util.Optional;
-
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-
+import java.util.Optional;
 import com.parking.management.entities.Empresa;
 
 @Repository
-public class EmpresaRepository extends JpaRepository<Empresa, Integer> {
+public interface EmpresaRepository extends JpaRepository<Empresa, Integer> {
     Optional<Empresa> findByCnpj(String cnpj);
-    
 }

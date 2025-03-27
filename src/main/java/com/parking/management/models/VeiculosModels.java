@@ -4,17 +4,17 @@ public class VeiculosModels {
     private int id;
     private String marca;
     private String modelo;
-    private int ano;
     private String cor;
     private String placa;
+    private String tipo;
 
-    public VeiculosModels(int id, String marca, String modelo, int ano, String cor, String placa) {
+    public VeiculosModels(int id, String marca, String modelo, String cor, String placa, String tipo) {
         this.id = id;
         this.marca = marca;
         this.modelo = modelo;
-        this.ano = ano;
         this.cor = cor;
         this.placa = placa;
+        this.tipo = tipo;
     }
 
     public int getId(){
@@ -41,13 +41,6 @@ public class VeiculosModels {
         this.modelo = modelo;
     }   
 
-    public int getAno() {
-        return ano;
-    }
-
-    public void setAno(int ano){
-        this.ano = ano;
-    }
 
     public String getCor() {
         return cor;
@@ -63,6 +56,14 @@ public class VeiculosModels {
 
     public void setPlaca(String placa){
         this.placa = placa;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo){
+        this.tipo = tipo;
     }
   
 }

@@ -1,35 +1,56 @@
 package com.parking.management.services;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
-
-import com.parking.management.entities.Carro; 
-import com.parking.management.repositories.CarroRepository;
+import java.util.Optional;
+import com.parking.management.entities.Veiculos; 
+import com.parking.management.repositories.VeiculosRepository;
 
 @Service
 public class CarroService {
 
-    @Autowired
-    private final CarroRepository carroRepository;
+    private final VeiculosRepository carroRepository;
 
-    public CarroService(CarroRepository carroRepository) {
+    public CarroService(VeiculosRepository carroRepository) {
         this.carroRepository = carroRepository;
     }
 
-    public List<Carro> listarTodos() {
+    public List<Veiculos> listarTodos() {
         return carroRepository.findAll();
     }
 
-    public Carro buscarPorPlaca(String placa){
+    public Veiculos buscarPorPlaca(String placa){
         return carroRepository.findByPlaca(placa).orElse(null);
     }
+
+    public Veiculos buscarPorId(Long id){
+        return carroRepository.findById(id).orElse(null);
+
+    }
     
-    public Carro salvar(Carro carro){
+    public Veiculos salvar(Veiculos carro){
         return carroRepository.save(carro);
     }
 
-    public void excluir(Carro carro){
-        carroRepository.delete(carro);
+    public Optional<Veiculos> atualizarVeiculo(Long id, Veiculos veiculoAtualizado) {
+        return carroRepository.findById(id)
+                .map(veiculoExistente -> {
+                    veiculoExistente.setMarca(veiculoAtualizado.getMarca());
+                    veiculoExistente.setModelo(veiculoAtualizado.getModelo());
+                    veiculoExistente.setCor(veiculoAtualizado.getCor());
+                    veiculoExistente.setPlaca(veiculoAtualizado.getPlaca());
+                    veiculoExistente.setTipo(veiculoAtualizado.getTipo());
+                    return carroRepository.save(veiculoExistente);
+                });
     }
+    public boolean excluir(Long id) {
+        return carroRepository.findById(id)
+                .map(veiculo -> {
+                    carroRepository.delete(veiculo);
+                    return true;
+                })
+                .orElse(false);
+    }
+
+    
 }

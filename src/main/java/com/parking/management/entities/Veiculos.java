@@ -3,8 +3,8 @@ package com.parking.management.entities;
 import jakarta.persistence.*; 
 
 @Entity
-@Table(name = "veiculo")
-public class Carro { 
+@Table(name = "veiculos")
+public class Veiculos { 
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,19 +19,22 @@ public class Carro {
     @Column(nullable = false)
     private String modelo;
 
-    private int ano;
+    @Column(nullable = false)
     private String cor;
 
+    @Column(nullable = false)
+    private String tipo;
 
-    public Carro() {}
+
+    public Veiculos() {}
 
   
-    public Carro(String marca, String modelo, int ano, String cor, String placa) {
+    public Veiculos(String marca, String modelo, String cor, String placa, String tipo) {
         this.marca = marca;
         this.modelo = modelo;
-        this.ano = ano;
         this.cor = cor;
         this.placa = placa;
+        this.tipo = tipo;
     }
 
     // Getters e Setters
@@ -59,14 +62,6 @@ public class Carro {
         this.modelo = modelo;
     }
 
-    public int getAno() {
-        return ano;
-    }
-
-    public void setAno(int ano) {
-        this.ano = ano;
-    }
-
     public String getCor() {
         return cor;
     }
@@ -81,5 +76,13 @@ public class Carro {
 
     public void setPlaca(String placa) {
         this.placa = placa;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 }
