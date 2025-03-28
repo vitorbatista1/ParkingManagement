@@ -1,18 +1,14 @@
 package com.parking.management.services;
 
 import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.parking.management.entities.Empresa;
 import com.parking.management.repositories.EmpresaRepository;
 
 @Service
 public class EmpresaService {
     
-    @Autowired
-    private EmpresaRepository empresaRepository;
+    private final EmpresaRepository empresaRepository;
 
     public EmpresaService(EmpresaRepository empresaRepository) {
         this.empresaRepository = empresaRepository;
@@ -26,4 +22,7 @@ public class EmpresaService {
         return empresaRepository.findByCnpj(cnpj).orElse(null);
     }
 
+    public Empresa adicionarEmpresa(Empresa empresa) {
+        return empresaRepository.save(empresa);
+    }
 }

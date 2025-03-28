@@ -22,22 +22,22 @@ public class Empresa {
     @Column()
     private String telefone;
 
-    @Column(nullable = false)
-    private String qtdVagasParaMotos;
+    @Column()
+    private Long vagas_motos;
 
-    @Column(nullable = false)
-    private String qtdVagasParaCarros;
+    @Column()
+    private Long vagas_carros;
 
 
     public Empresa() {}
 
-    public Empresa(String nome, String cnpj, String endereco, String telefone, String qtdVagasParaMotos, String qtdVagasParaCarros) {
+    public Empresa(String nome, String cnpj, String endereco, String telefone, Long vagas_motos, Long vagas_carros) {
         this.nome = nome;
         this.cnpj = cnpj;
         this.endereco = endereco;
         this.telefone = telefone;
-        this.qtdVagasParaMotos = qtdVagasParaMotos;
-        this.qtdVagasParaCarros = qtdVagasParaCarros;
+        this.vagas_motos = vagas_motos;
+        this.vagas_carros = vagas_carros;
     }   
     
 
@@ -73,20 +73,20 @@ public class Empresa {
         this.telefone = telefone;
     }   
 
-    public String getQtdVagasParaMotos() {
-        return qtdVagasParaMotos;
+    public Long getQtdVagasParaMotos() {
+        return vagas_motos;
     }
 
-    public void setQtdVagasParaMotos(String qtdVagasParaMotos) {
-        this.qtdVagasParaMotos = qtdVagasParaMotos;
+    public void setQtdVagasParaMotos(Long vagas_motos) {
+        this.vagas_motos = vagas_motos;
     }
 
-    public String getQtdVagasParaCarros() {
-        return qtdVagasParaCarros;
+    public Long getQtdVagasParaCarros() {
+        return vagas_carros;
     }   
 
-    public void setQtdVagasParaCarros(String qtdVagasParaCarros) {
-        this.qtdVagasParaCarros = qtdVagasParaCarros;
+    public void setQtdVagasParaCarros(Long vagas_carros) {
+        this.vagas_carros = vagas_carros;
     }
 
 
